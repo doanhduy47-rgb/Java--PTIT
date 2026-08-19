@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class bai1 {
+
+    public static BigInteger gcd(BigInteger a, BigInteger b) {
+        while (!b.equals(BigInteger.ZERO)) {
+            BigInteger r = a.mod(b);
+            a = b;
+            b = r;
+        }
+        return a;
+    }
+
+    public static BigInteger lcm(BigInteger a, BigInteger b) {
+        return a.divide(gcd(a, b)).multiply(b).abs();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            BigInteger a = sc.nextBigInteger();
+            BigInteger b = sc.nextBigInteger();
+
+            System.out.println(lcm(a, b));
+        }
+    }
+}
