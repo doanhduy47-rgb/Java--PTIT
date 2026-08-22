@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class bai1{
+    public static boolean isNatural(double n) {
+        return n >= 0 && n == Math.floor(n);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in) ;
+        int n = sc.nextInt();
+        while(n>0){
+            n-- ;
+            double a = sc.nextInt();
+            double b = Math.sqrt(a) ;
+            if(isNatural(b)){
+                System.out.println("YES");
+            }
+            else System.out.println("NO");
+        }
+    }
+}
