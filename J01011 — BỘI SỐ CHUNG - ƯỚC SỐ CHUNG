@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class bai1 {
+    public static double gcd(double a , double b){
+        while(b!=0){
+            double r = a % b ;
+            a = b ;
+            b = r ;
+        }
+        return a ;
+    }
+
+    public static double lcm(double a,double b ,double c){
+        double r = Math.floor(a/c) ;
+        double l = r * b ;
+        return l ;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in) ;
+        int p = sc.nextInt();
+        while(p>0){
+            p-- ;
+            double n = sc.nextDouble();
+            double k = sc.nextDouble();
+            double min = gcd(n,k) ;
+            double largest = lcm(n,k,min) ;
+            System.out.println((long)largest + " " + (long)min);
+        }
+    }
+}
